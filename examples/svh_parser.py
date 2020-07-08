@@ -52,32 +52,3 @@ exporter.export(rdlc_elab_list,
                 export_as_package=True)
 
 print("Successfully generated the output svh files")
-
-############
-#### All the input files output into one pdf file
-############
-##dest_pdf_fl = "example_registers_spec.pdf"
-##exporter.export(rdlc_elab_list, 
-##                os.path.join(output_dir, dest_pdf_fl),
-##                use_uppercase_inst_name=True)
-##
-##print("Generated the output file - %s " %dest_pdf_fl)
-
-##########
-## Use the below when separate output files are required
-##########
-## dest_pdf_list = []
-## for file_f in input_files:
-##     dest_pdf_list.append(file_f.replace(".rdl",".pdf"))
-## 
-## # Separate output pdf file for each input rdl file
-## for root_id,root in enumerate(rdlc_elab_list):
-##     # Input to exporter takes list, so create a list
-##     root_list = []
-##     root_list.append(root)
-## 
-##     exporter.export(root_list, 
-##                     os.path.join(output_dir, dest_pdf_list[root_id]),
-##                     use_uppercase_inst_name=True)
-##     print("Generated the output file - %s " %dest_pdf_list[root_id])
-
