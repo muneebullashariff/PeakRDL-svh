@@ -34,13 +34,24 @@ except RDLCompileError:
 ## Generate the PDF output files
 exporter = svhExporter()
 
-dest_pdf_fl = "example_registers_defines.svh"
+package_file_name = "example_register_defines_pkg.svh"
+
+## Derive the output file(s) name
+output_files = []
+for in_fl in input_files:
+    var_out = in_fl.replace(".rdl","_defines.svh")
+    strg = os.path.join(output_dir, var_out)
+    output_files.append(strg)
+
+output_pkg_name = os.path.join(output_dir, package_file_name)
+
+# Call the exporter
 exporter.export(rdlc_elab_list, 
-                os.path.join(output_dir, dest_pdf_fl),
+                output_files,
+                output_pkg_name,
                 export_as_package=True)
 
-print("Generated the output file - %s " %dest_pdf_fl)
-
+print("Successfully generated the output svh files")
 
 ############
 #### All the input files output into one pdf file

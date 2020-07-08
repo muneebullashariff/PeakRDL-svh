@@ -1,1 +1,1 @@
-Add the required inut files in this folder
+Add the required input files in this folder
