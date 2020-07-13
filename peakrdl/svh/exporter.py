@@ -291,6 +291,7 @@ class svhExporter:
 
     def get_desc(self, node: Node) -> str:
         s = (node.get_property("desc", default="")).replace("\n"," ")
+        s = s.replace("  "," ")
         return s
 
     def get_addrmap_size(self, node: Node) -> str:
