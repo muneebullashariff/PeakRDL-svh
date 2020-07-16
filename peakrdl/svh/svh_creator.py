@@ -56,7 +56,12 @@ class svhCreator:
         strg += '//'*63 + '\n\n'
 
         strg += 'package %s;\n' %(pkg_name)
-
+                
+        strg += '\n'
+        strg += '  import uvm_pkg::*;\n'
+        strg += '  `include "uvm_macros.svh"\n'
+        strg += '\n'
+        
         # include files 
         for item in out_list:
             match = re.search(r"output_files[\/](.*.svh)",str(item))
